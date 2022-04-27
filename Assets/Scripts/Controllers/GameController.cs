@@ -108,6 +108,7 @@ public class GameController : MonoBehaviour
 
     private void ActivateAlienCompound()
     {
+	cutCameras[0].SetActive(true);
         alienCompound.SetActive(true);
         fadeInPanel.SetActive(true);
         fadeInPanel.GetComponent<Animation>().Play();

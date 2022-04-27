@@ -108,12 +108,9 @@ public class GameController : MonoBehaviour
 
     private void ActivateAlienCompound()
     {
-        alienWalkingSpeed = 0.8f;
         alienCompound.SetActive(true);
         fadeInPanel.SetActive(true);
         fadeInPanel.GetComponent<Animation>().Play();
-        cutCameras[0].SetActive(true);
-        cutCameras[0].GetComponent<Animation>().Play();
 
         PlayAudio("ThemeForAliens");
         StartCoroutine(FadeOut());
@@ -121,11 +118,11 @@ public class GameController : MonoBehaviour
 
     IEnumerator stopIntroVideo(VideoPlayer vp)
     {
-	    introVideoPanel.SetActive(false);
+	introVideoPanel.SetActive(false);
         vp.Stop();
         ActivateAlienCompound();
         yield return new WaitForSeconds(2f);
-	    fadeInPanel.SetActive(false);
+	fadeInPanel.SetActive(false);
     }
 
     IEnumerator FadeOut()

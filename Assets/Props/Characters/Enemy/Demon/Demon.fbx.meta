@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Demon__diffuse
+    second: {fileID: 2800000, guid: d66f318d2e08d3640a11992b1c7f3a34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Demon__normal
+    second: {fileID: 2800000, guid: 6bf36cdbebee8194e8b1569b3a2f0814, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Demon__specular
+    second: {fileID: 2800000, guid: e3ec4e7e16e510c4cb1d1b0493259534, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

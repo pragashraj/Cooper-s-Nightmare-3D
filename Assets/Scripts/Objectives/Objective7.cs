@@ -46,7 +46,7 @@ public class Objective7 : MonoBehaviour
             {
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
-		CompleteObject7();
+		        CompleteObject7();
                 SetFloraDestination();
             }
         }

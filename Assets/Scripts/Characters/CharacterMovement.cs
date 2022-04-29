@@ -10,10 +10,12 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 roamPosition;
     private CharacterAI characterAI;
     private bool walking = false;
+    private CharacterFloraController characterFloraController;
 
     private void Awake()
     {
         characterAI = gameObject.GetComponent<CharacterAI>();
+        characterFloraController = gameObject.GetComponent<CharacterFloraController>();
     }
 
     private void Start()
@@ -38,5 +40,6 @@ public class CharacterMovement : MonoBehaviour
         walking = true;
         roamPosition = characterAI.GetRoamingPosition(startingPosition);
         characterAI.MoveTo(roamPosition);
+        characterFloraController.HandleWalkAnim();
     }
 }

@@ -52,8 +52,8 @@ public class Objective8 : MonoBehaviour
         PlayAudio("HeliCopterFlying");
         player.SetActive(false);
         flora.SetActive(false);
-	health.SetActive(false);
-	map.SetActive(false);
+	    health.SetActive(false);
+	    map.SetActive(false);
 
         yield return new WaitForSeconds(1.5f);
         alienCompund.SetActive(true);
@@ -79,7 +79,7 @@ public class Objective8 : MonoBehaviour
         fadeOutPanel.GetComponent<Animation>().Play();
 
         yield return new WaitForSeconds(2f);
-	cutCams[1].SetActive(false);
+	    cutCams[1].SetActive(false);
         cutCams[2].SetActive(true);
 
         yield return new WaitForSeconds(3f);

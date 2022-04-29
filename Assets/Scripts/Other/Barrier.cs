@@ -11,10 +11,10 @@ public class Barrier : MonoBehaviour
     [SerializeField] private Vector3 newPlayerPos;
     [SerializeField] private Vector3 newFloraPos;
     [SerializeField] private Vector3 offset;
+    [SerializeField] private GameObject car;
 
     private ObjectiveManager objectiveManager;
     private CharacterAI characterAI;
-    private NavMeshAgent navMeshAgent;
     private CharacterFloraController characterFloraController;
     private Vector3 targetPosition;
     private ThirdPersonCharacterControl thirdPersonCharacterControl;
@@ -84,13 +84,14 @@ public class Barrier : MonoBehaviour
 
     IEnumerator HandleFlow()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         player.SetActive(true);
         player.transform.position = newPlayerPos;
         thirdPersonCharacterControl.IsStoryMode = false;
         flora.SetActive(true);
         characterFloraController.HandleStandAndIdle();
         flora.transform.position = newFloraPos;
+        car.GetComponent<UnityStandardAssets.Vehicles.Car.CarUserControl>().enabled = false;
 
         yield return new WaitForSeconds(1f);
         carCam.SetActive(false);

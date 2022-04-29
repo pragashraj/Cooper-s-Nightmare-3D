@@ -81,7 +81,6 @@ public class Objective1 : MonoBehaviour
     {
         objectiveManager.SetLastCompletedObjective(ObjectiveManager.LastCompletedObjective.OBJ1);
         objectiveManager.SetObjectivePanel("Objective 1 completed", 1);
-        characterFloraController.HandleWalkAnim();
     }
 
     private void SetConversation(int i)
@@ -102,11 +101,11 @@ public class Objective1 : MonoBehaviour
         yield return new WaitForSeconds(2f);
         storyTextPanel.SetActive(true);
 
-        for (int i = 0; i < conversations.Count; i++)
+        /*for (int i = 0; i < conversations.Count; i++)
         {
             SetConversation(i);
             yield return new WaitForSeconds(4f);
-        }
+        }*/
 
         thirdPersonOrbitCamBasic.enabled = true;
         fadeOutPanel.SetActive(false);
@@ -114,7 +113,8 @@ public class Objective1 : MonoBehaviour
         cutSceneCamera.SetActive(false);
         thirdPersonCharacterControl.IsStoryMode = false;
         CompleteObject1();
-        characterMovement.enabled = true;
         characterAI.enabled = true;
+        characterMovement.enabled = true;
+        characterFloraController.HandleWalkAnim();
     }
 }

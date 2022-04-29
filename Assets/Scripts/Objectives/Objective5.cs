@@ -97,12 +97,12 @@ public class Objective5 : MonoBehaviour
 
     IEnumerator HandleObjectveFlow()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         flora.transform.position = pos;
         flora.transform.Rotate(rotation);
         flora.SetActive(true);
         characterFloraController.HandleStandAndIdle();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         characterFloraController.HandleIdleAnim();
         flora.GetComponent<CharacterMovement>().enabled = false;
         cutSceneCamera.SetActive(true);

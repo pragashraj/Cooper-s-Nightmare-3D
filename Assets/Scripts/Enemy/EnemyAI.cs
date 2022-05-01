@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private float range = 30.0f;
+    [SerializeField] private float range = 50.0f;
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -43,6 +43,6 @@ public class EnemyAI : MonoBehaviour
 
     public Vector3 GetRandomDir()
     {
-        return new Vector3(Random.Range(-2f, 20f), 0, Random.Range(-2f, 20f)).normalized;
+        return new Vector3(Random.Range(-20f, 50f), 0, Random.Range(-2f, 50f)).normalized;
     }
 }

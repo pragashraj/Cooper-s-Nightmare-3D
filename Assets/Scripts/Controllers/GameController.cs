@@ -12,11 +12,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject cinematicAlien2;
     [SerializeField] private GameObject[] cutCameras;
     [SerializeField] private GameObject fadeOutPanel;
-    [SerializeField] private GameObject blackScreen;
     [SerializeField] private GameObject cut3Trigger;
     [SerializeField] private GameObject alienArmy;
     [SerializeField] private GameObject playerX;
-    [SerializeField] private Material skybox;
+
     [SerializeField] private float alienWalkingSpeed = 0f;
     [SerializeField] private float forwardZ = 1f;
 
@@ -41,8 +40,7 @@ public class GameController : MonoBehaviour
     {
         introVideoPanel.SetActive(true);
         introVideoPlayer.loopPointReached += CheckOver;
-
-        RenderSettings.skybox = skybox;
+	Cursor.visible = true;
     }
 
     void Update()
@@ -64,7 +62,6 @@ public class GameController : MonoBehaviour
     private void HandleCut3Triggered()
     {
         cinematicAlien1.SetActive(false);
-        blackScreen.SetActive(false);
 
         fadeInPanel.SetActive(true);
         fadeInPanel.GetComponent<Animation>().Play();
@@ -133,6 +130,7 @@ public class GameController : MonoBehaviour
         fadeOutPanel.GetComponent<Animation>().Play();
 
         yield return new WaitForSeconds(3f);
+	alienWalkingSpeed *= 3;
         cutCameras[1].SetActive(true);
         cutCameras[0].SetActive(false);
         fadeOutPanel.SetActive(false);
@@ -143,7 +141,6 @@ public class GameController : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         fadeOutPanel.SetActive(false);
-        blackScreen.SetActive(true);
     }
 
     IEnumerator StopFadeIn()

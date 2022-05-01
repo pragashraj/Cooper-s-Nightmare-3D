@@ -14,6 +14,7 @@ public class Objective8 : MonoBehaviour
     [SerializeField] private GameObject alienCompund;
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject map;
+    [SerializeField] private GameObject nightmare;
 
     private ObjectiveManager objectiveManager;
     private AudioManager audioManager;
@@ -50,15 +51,17 @@ public class Objective8 : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         PlayAudio("HeliCopterFlying");
-        player.SetActive(false);
         flora.SetActive(false);
-	health.SetActive(false);
-	map.SetActive(false);
+	    health.SetActive(false);
+	    map.SetActive(false);
 
         yield return new WaitForSeconds(1.5f);
+        PlayAudio("ThemeForAliens");
+        player.SetActive(false);
         alienCompund.SetActive(true);
         cinematicAlien1.SetActive(false);
         cinematicAlien2.SetActive(true);
+        cutCams[0].SetActive(true);
         cutCams[0].GetComponent<Animation>().Play();
         fadeOutPanel.SetActive(false);
 
@@ -66,10 +69,10 @@ public class Objective8 : MonoBehaviour
         fadeOutPanel.SetActive(true);
         fadeOutPanel.GetComponent<Animation>().Play();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         PlayAudio("ManScream");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         playerY.SetActive(true);
         cutCams[0].SetActive(false);
         cutCams[1].SetActive(true);
@@ -79,10 +82,13 @@ public class Objective8 : MonoBehaviour
         fadeOutPanel.GetComponent<Animation>().Play();
 
         yield return new WaitForSeconds(2f);
-	cutCams[1].SetActive(false);
+	    cutCams[1].SetActive(false);
         cutCams[2].SetActive(true);
+        nightmare.SetActive(true);
+        playerY.GetComponentInChildren<Animator>().SetTrigger("FallenIdle");
+        playerY.transform.position = new Vector3(playerY.transform.position.x, 1, playerY.transform.position.z);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(8f);
         levelEnd.SetActive(true);
     }
 

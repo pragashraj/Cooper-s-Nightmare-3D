@@ -64,6 +64,7 @@ public class Objective5 : MonoBehaviour
                 PlayAudio("Stay here");
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
+                flora.GetComponent<CharacterMovement>().enabled = false;
                 flora.GetComponent<NavMeshAgent>().enabled = false;
                 flora.GetComponent<CharacterAI>().enabled = false;
                 flora.SetActive(false);
@@ -104,7 +105,6 @@ public class Objective5 : MonoBehaviour
         characterFloraController.HandleStandAndIdle();
         yield return new WaitForSeconds(2f);
         characterFloraController.HandleIdleAnim();
-        flora.GetComponent<CharacterMovement>().enabled = false;
         cutSceneCamera.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);

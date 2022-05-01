@@ -64,7 +64,7 @@ public class Objective7 : MonoBehaviour
         characterAI.enabled = true;
 
         characterAI.MoveTo(roamPosition);
-        navMeshAgent.speed = 2f;
+        navMeshAgent.speed = 4f;
 
         animator.SetFloat("Movement", 1f, 0.1f, Time.deltaTime);
     }

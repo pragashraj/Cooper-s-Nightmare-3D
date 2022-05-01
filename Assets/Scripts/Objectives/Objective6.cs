@@ -5,16 +5,19 @@ using UnityEngine.AI;
 public class Objective6 : MonoBehaviour
 {
     [SerializeField] private GameObject fadeOutPanel;
-    [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject carCamera;
     [SerializeField] private GameObject playerRoot;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject enemyRobot;
     [SerializeField] private Vector3 roamPosition;
     [SerializeField] private GameObject car;
     [SerializeField] private GameObject[] doorParts;
+    [SerializeField] private GameObject playerMap;
+    [SerializeField] private GameObject carMap;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject playerIndicator;
     [SerializeField] private GameObject carIndicator;
+    [SerializeField] private GameObject carMapCamera;
 
     private ObjectiveManager objectiveManager;
     private AudioManager audioManager;
@@ -65,18 +68,21 @@ public class Objective6 : MonoBehaviour
     IEnumerator HandleObjectveFlow()
     {
         yield return new WaitForSeconds(3f);
-        camera.SetActive(true);
+        carCamera.SetActive(true);
         enemyRobot.SetActive(true);
         PlayAudio("RobotMovement");
-        //SetSpiderBotDestination();
+        SetSpiderBotDestination();
         playerRoot.SetActive(false);
-	healthBar.SetActive(false);
-	playerIndicator.SetActive(false);
-	carIndicator.SetActive(true);
+	    healthBar.SetActive(false);
+        playerMap.SetActive(false);
+        carMap.SetActive(true);
+        carMapCamera.SetActive(true);
+        playerIndicator.SetActive(false);
+	    carIndicator.SetActive(true);
 	
-	for(int i = 0; i < doorParts.Length; i++) {
-	     doorParts[i].SetActive(false);
-	}
+	    for(int i = 0; i < doorParts.Length; i++) {
+	         doorParts[i].SetActive(false);
+	    }
 
         yield return new WaitForSeconds(2f);
         fadeOutPanel.SetActive(false);

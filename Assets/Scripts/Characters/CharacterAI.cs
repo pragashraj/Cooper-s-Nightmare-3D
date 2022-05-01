@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private float range = 100.0f;
+    [SerializeField] private float range = 50.0f;
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -40,6 +40,6 @@ public class CharacterAI : MonoBehaviour
 
     public Vector3 GetRandomDir()
     {
-        return new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f)).normalized;
+        return new Vector3(Random.Range(-2f, 52f), 0, Random.Range(-2f, 50f)).normalized;
     }
 }

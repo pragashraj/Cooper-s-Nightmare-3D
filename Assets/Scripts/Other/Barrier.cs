@@ -9,7 +9,6 @@ public class Barrier : MonoBehaviour
     [SerializeField] private GameObject carCam;
     [SerializeField] private GameObject player;
     [SerializeField] private Vector3 newPlayerPos;
-    [SerializeField] private Vector3 newFloraPos;
     [SerializeField] private Vector3 offset;
     [SerializeField] private GameObject car;
 
@@ -48,6 +47,7 @@ public class Barrier : MonoBehaviour
             {
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
+                car.GetComponent<UnityStandardAssets.Vehicles.Car.CarUserControl>().enabled = false;
                 StartCoroutine(HandleFlow());
             }
         }
@@ -90,8 +90,7 @@ public class Barrier : MonoBehaviour
         thirdPersonCharacterControl.IsStoryMode = false;
         flora.SetActive(true);
         characterFloraController.HandleStandAndIdle();
-        flora.transform.position = newFloraPos;
-        car.GetComponent<UnityStandardAssets.Vehicles.Car.CarUserControl>().enabled = false;
+        flora.transform.position = newPlayerPos + offset;
 
         yield return new WaitForSeconds(1f);
         carCam.SetActive(false);

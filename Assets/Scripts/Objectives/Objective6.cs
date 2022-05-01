@@ -12,6 +12,7 @@ public class Objective6 : MonoBehaviour
     [SerializeField] private Vector3 roamPosition;
     [SerializeField] private GameObject car;
     [SerializeField] private GameObject[] doorParts;
+    [SerializeField] private GameObject playerMap;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject playerIndicator;
     [SerializeField] private GameObject carIndicator;
@@ -71,7 +72,8 @@ public class Objective6 : MonoBehaviour
         SetSpiderBotDestination();
         playerRoot.SetActive(false);
 	    healthBar.SetActive(false);
-	    playerIndicator.SetActive(false);
+        playerMap.SetActive(false);
+        playerIndicator.SetActive(false);
 	    carIndicator.SetActive(true);
 	
 	    for(int i = 0; i < doorParts.Length; i++) {

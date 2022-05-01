@@ -32,7 +32,6 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         RenderSettings.skybox = skybox;
-        directLight.SetActive(true);
     }
 
     private void PlayAudio(string name)
@@ -43,6 +42,7 @@ public class PlayerManager : MonoBehaviour
     public void StartPlayerX()
     {
         alienArmy.SetActive(false);
+        directLight.SetActive(true);
         StartCoroutine(StartPlayerXStory());
     }
 

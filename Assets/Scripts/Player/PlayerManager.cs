@@ -28,12 +28,6 @@ public class PlayerManager : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
     }
 
-
-    void Start()
-    {
-        RenderSettings.skybox = skybox;
-    }
-
     private void PlayAudio(string name)
     {
         audioManager.Play(name);
@@ -43,6 +37,9 @@ public class PlayerManager : MonoBehaviour
     {
         alienArmy.SetActive(false);
         directLight.SetActive(true);
+	RenderSettings.skybox = skybox;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(StartPlayerXStory());
     }
 

@@ -11,6 +11,10 @@ public class Barrier : MonoBehaviour
     [SerializeField] private Vector3 newPlayerPos;
     [SerializeField] private Vector3 offset;
     [SerializeField] private GameObject car;
+    [SerializeField] private GameObject playerMap;
+    [SerializeField] private GameObject carMap;
+    [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject carMapCamera;
 
     private ObjectiveManager objectiveManager;
     private CharacterAI characterAI;
@@ -91,6 +95,10 @@ public class Barrier : MonoBehaviour
         flora.SetActive(true);
         characterFloraController.HandleStandAndIdle();
         flora.transform.position = newPlayerPos + offset;
+        healthBar.SetActive(true);
+        playerMap.SetActive(true);
+        carMap.SetActive(false);
+        carMapCamera.SetActive(false);
 
         yield return new WaitForSeconds(1f);
         carCam.SetActive(false);

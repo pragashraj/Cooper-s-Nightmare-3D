@@ -13,9 +13,11 @@ public class Objective6 : MonoBehaviour
     [SerializeField] private GameObject car;
     [SerializeField] private GameObject[] doorParts;
     [SerializeField] private GameObject playerMap;
+    [SerializeField] private GameObject carMap;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject playerIndicator;
     [SerializeField] private GameObject carIndicator;
+    [SerializeField] private GameObject carMapCamera;
 
     private ObjectiveManager objectiveManager;
     private AudioManager audioManager;
@@ -73,6 +75,8 @@ public class Objective6 : MonoBehaviour
         playerRoot.SetActive(false);
 	    healthBar.SetActive(false);
         playerMap.SetActive(false);
+        carMap.SetActive(true);
+        carMapCamera.SetActive(true);
         playerIndicator.SetActive(false);
 	    carIndicator.SetActive(true);
 	

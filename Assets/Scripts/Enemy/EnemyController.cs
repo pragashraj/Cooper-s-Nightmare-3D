@@ -84,13 +84,15 @@ public class EnemyController : MonoBehaviour
 
     private void HandleAttack()
     {
-        
-    }
-
-    IEnumerator ReduceHealth()
-    {
-        yield return new WaitForSeconds(2f);
-        player.GetComponent<PlayerHealth>().DecreaseHealthValue(1f);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range)) 
+	{
+	     Transform target = hit.transform;
+	     if (target.tag == "Player")
+	     {
+		  PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
+		  playerHealth.DecreaseHealthValue(5);
+	     }
+	}
     }
 
     private void FindTarget()

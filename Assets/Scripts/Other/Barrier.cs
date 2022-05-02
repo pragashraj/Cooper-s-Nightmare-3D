@@ -9,12 +9,14 @@ public class Barrier : MonoBehaviour
     [SerializeField] private GameObject carCam;
     [SerializeField] private GameObject player;
     [SerializeField] private Vector3 newPlayerPos;
+    [SerializeField] private Vector3 newFloraPos;
     [SerializeField] private Vector3 offset;
     [SerializeField] private GameObject car;
     [SerializeField] private GameObject playerMap;
     [SerializeField] private GameObject carMap;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject carMapCamera;
+    [SerializeField] private GameObject playerIndicator;
 
     private ObjectiveManager objectiveManager;
     private CharacterAI characterAI;
@@ -60,7 +62,7 @@ public class Barrier : MonoBehaviour
     private void Chase(float speed)
     {
         flora.transform.LookAt(player.transform);
-        targetPosition = player.transform.position + offset;
+        targetPosition = newFloraPos + offset;
         characterAI.MoveTo(targetPosition);
         agent.speed = speed;
     }
@@ -92,19 +94,24 @@ public class Barrier : MonoBehaviour
         player.SetActive(true);
         player.transform.position = newPlayerPos;
         thirdPersonCharacterControl.IsStoryMode = false;
+
         flora.SetActive(true);
-        characterFloraController.HandleStandAndIdle();
-        flora.transform.position = newPlayerPos + offset;
+        flora.transform.position = newFloraPos;
+        characterAI.enabled = true;
+        agent.enabled = true;
+
         healthBar.SetActive(true);
         playerMap.SetActive(true);
+        playerIndicator.SetActive(true);
         carMap.SetActive(false);
         carMapCamera.SetActive(false);
 
         yield return new WaitForSeconds(1f);
+        characterFloraController.HandleStandAndIdle();
         carCam.SetActive(false);
         characterFloraController.HandleIdleAnim();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         fadeOutPanel.SetActive(false);
         carStopped = true;
     }

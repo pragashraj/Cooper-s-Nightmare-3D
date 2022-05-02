@@ -77,7 +77,7 @@ public class Objective8 : MonoBehaviour
         cutCams[0].SetActive(false);
         cutCams[1].SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         fadeOutPanel.SetActive(true);
         fadeOutPanel.GetComponent<Animation>().Play();
 

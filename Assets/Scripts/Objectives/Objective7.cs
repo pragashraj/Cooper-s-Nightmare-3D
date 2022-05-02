@@ -72,6 +72,8 @@ public class Objective7 : MonoBehaviour
     IEnumerator HandleObjectveFlow()
     {
         yield return new WaitForSeconds(2f);
+        navMeshAgent.enabled = false;
+        characterAI.enabled = false;
         flora.SetActive(false);
     }
 }

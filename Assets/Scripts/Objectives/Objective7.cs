@@ -11,29 +11,12 @@ public class Objective7 : MonoBehaviour
     private ObjectiveManager objectiveManager;
     private CharacterAI characterAI;
     private NavMeshAgent navMeshAgent;
-    private Animator animator;
-    private bool objCompleted = false;
 
     private void Awake()
     {
         objectiveManager = FindObjectOfType<ObjectiveManager>();
         characterAI = flora.GetComponent<CharacterAI>();
         navMeshAgent = flora.GetComponent<NavMeshAgent>();
-        animator = flora.GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        if (!objCompleted)
-        {
-            if (Vector3.Distance(flora.transform.position, roamPosition) < 2f)
-            {
-                fadeOutPanel.SetActive(true);
-                fadeOutPanel.GetComponent<Animation>().Play();
-                objCompleted = true;
-                StartCoroutine(HandleObjectveFlow());
-            }
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,7 +30,7 @@ public class Objective7 : MonoBehaviour
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
 		        CompleteObject7();
-                SetFloraDestination();
+                StartCoroutine(HandleObjectveFlow());
             }
         }
     }
@@ -58,20 +41,9 @@ public class Objective7 : MonoBehaviour
         objectiveManager.SetObjectivePanel("Objective 7 completed", 7);
     }
 
-    private void SetFloraDestination()
-    {
-        navMeshAgent.enabled = true;
-        characterAI.enabled = true;
-
-        characterAI.MoveTo(roamPosition);
-        navMeshAgent.speed = 4f;
-
-        animator.SetFloat("Movement", 1f, 0.1f, Time.deltaTime);
-    }
-
     IEnumerator HandleObjectveFlow()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         navMeshAgent.enabled = false;
         characterAI.enabled = false;
         flora.SetActive(false);

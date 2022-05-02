@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668969, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_RootOrder
@@ -1121,7 +1121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.9
+      value: -10.85
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1129,7 +1129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.3
+      value: -6.86
       objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7977,6 +7977,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!136 &1578995697
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578995694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!1 &1579330347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9308,6 +9322,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 696628955}
     - target: {fileID: 1509337345434450953, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: flora
+      value: 
+      objectReference: {fileID: 1578995694}
+    - target: {fileID: 1509337345434450953, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 2065823943}
@@ -9677,7 +9695,7 @@ PrefabInstance:
       objectReference: {fileID: 1190668006}
     - target: {fileID: 1509337345756885905, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: lastCompletedObjective
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1509337346255703848, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: m_IsActive
@@ -10205,7 +10223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1818556410
 Transform:
   m_ObjectHideFlags: 0
@@ -10946,7 +10964,7 @@ MonoBehaviour:
   carCam: {fileID: 2065823943}
   player: {fileID: 792870534}
   newPlayerPos: {x: 315, y: 1, z: 125}
-  newFloraPos: {x: 300, y: 1, z: 130}
+  newFloraPos: {x: 300, y: 1, z: 125}
   offset: {x: -1, y: 0, z: -2}
   car: {fileID: 696628955}
   playerMap: {fileID: 1860480506}
@@ -11396,7 +11414,7 @@ PrefabInstance:
       objectReference: {fileID: 65215436}
     - target: {fileID: 6653248347180289132, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: sounds.Array.size
@@ -11512,7 +11530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6653248348191421489, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248348353558016, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: mainMenu

@@ -50,7 +50,7 @@ public class Objective8 : MonoBehaviour
     IEnumerator HandleObjectveFlow()
     {
         yield return new WaitForSeconds(1.5f);
-        PlayAudio("HeliCopterFlying");
+        PlayAudio("HeliCopter");
         flora.SetActive(false);
 	    health.SetActive(false);
 	    map.SetActive(false);
@@ -69,10 +69,10 @@ public class Objective8 : MonoBehaviour
         fadeOutPanel.SetActive(true);
         fadeOutPanel.GetComponent<Animation>().Play();
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         PlayAudio("ManScream");
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         playerY.SetActive(true);
         cutCams[0].SetActive(false);
         cutCams[1].SetActive(true);

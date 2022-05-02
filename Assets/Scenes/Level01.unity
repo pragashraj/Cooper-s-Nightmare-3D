@@ -4658,7 +4658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243081573422593557, guid: d7b3d1fea8dd3134ca0c30d5b7ec5a76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 243081573422593557, guid: d7b3d1fea8dd3134ca0c30d5b7ec5a76, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6099,7 +6099,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8786,6 +8786,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 310859520038969835, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 310859520044043771, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
       propertyPath: switchUI
       value: 
@@ -8854,6 +8858,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.92
       objectReference: {fileID: 0}
+    - target: {fileID: 310859520575743737, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 310859520607712621, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
       propertyPath: m_LocalPosition.z
       value: 63
@@ -8917,6 +8925,14 @@ PrefabInstance:
     - target: {fileID: 310859520840032069, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 310859521044521837, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 310859521149786712, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 310859521171739334, guid: 0cbe06bcf25af374a9af1c0758f15795, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10081,7 +10097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801368659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 30, y: 0.1, z: 15}
   m_Children: []
   m_Father: {fileID: 2106373974}
@@ -10829,7 +10845,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10916,7 +10932,7 @@ MonoBehaviour:
   carCam: {fileID: 2065823943}
   player: {fileID: 792870534}
   newPlayerPos: {x: 319, y: 1.2496774, z: 114.9}
-  offset: {x: 1, y: 0, z: 2}
+  offset: {x: -1, y: 0, z: -2}
   car: {fileID: 696628955}
   playerMap: {fileID: 1860480506}
   carMap: {fileID: 1629079849}
@@ -11367,8 +11383,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cde429f031cf70a41954f5cae5e680d4, type: 3}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.data[14].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.data[14].name
+      value: Helicopter
       objectReference: {fileID: 0}
     - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: sounds.Array.data[1].pitch
@@ -11399,7 +11431,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.data[14].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: sounds.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653248347618549721, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: sounds.Array.data[14].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248347960984144, guid: d2166800871f9844c853403d0ab34a03, type: 3}
@@ -11886,7 +11926,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!1001 &2076760144

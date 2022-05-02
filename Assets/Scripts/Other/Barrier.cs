@@ -28,7 +28,7 @@ public class Barrier : MonoBehaviour
     {
         objectiveManager = FindObjectOfType<ObjectiveManager>();
         characterFloraController = flora.GetComponent<CharacterFloraController>();
-        thirdPersonCharacterControl = player.GetComponent<ThirdPersonCharacterControl>();
+        thirdPersonCharacterControl = player.GetComponentInChildren<ThirdPersonCharacterControl>();
         characterAI = flora.GetComponent<CharacterAI>();
         agent = flora.GetComponent<NavMeshAgent>();
     }

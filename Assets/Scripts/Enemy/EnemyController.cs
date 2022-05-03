@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -17,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 targetPosition;
     private State state;
     private float range = 100f;
+    public float HealthInterval = 5.0f;
+    private float healthIntervalAccumulator;
 
     private EnemyAI enemyAI;
     private Animator animator;
@@ -85,16 +86,24 @@ public class EnemyController : MonoBehaviour
 
     private void HandleAttack()
     {
+        animator.SetFloat("Movement", 0f, 0.1f, Time.deltaTime);
+
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, range)) 
+        Vector3 raycastDir = player.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, raycastDir, out hit, range)) 
 	    {
-	         Transform target = hit.transform;
-	         if (target.tag == "Player")
-	         {
-		        PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
-		        playerHealth.DecreaseHealthValue(5);
-	         }
-	    }
+	        Transform target = hit.transform;
+            if (target.tag == "Player")
+	        {
+                PlayerHealth playerHealth = hit.transform.gameObject.GetComponentInChildren<PlayerHealth>();
+
+                if ((healthIntervalAccumulator += Time.deltaTime) >= HealthInterval)
+                {
+                    healthIntervalAccumulator = 0.0f;
+                    playerHealth.DecreaseHealthValue(5);
+                }
+            }
+        }
     }
 
     private void FindTarget()

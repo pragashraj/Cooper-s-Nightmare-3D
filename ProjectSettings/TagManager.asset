@@ -9,6 +9,7 @@ TagManager:
   - ObjIndicator
   - Fire
   - MainAlien
+  - PlayerRoot
   layers:
   - Default
   - TransparentFX

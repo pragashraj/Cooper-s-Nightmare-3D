@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
 
     private bool introEnd = false;
     private bool isMainMenuOpen = false;
+    private bool levelEnd = false;
 
     public bool isIntroEnd { get => introEnd; set => introEnd = value; }
+
+    public bool isLevelEnd { get => levelEnd; set => levelEnd = value; }
 
     private void Awake()
     {
@@ -25,9 +28,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-	if (introEnd) {
-	     HandleMainMenu();
-	}
+	    if (introEnd && !levelEnd) {
+	         HandleMainMenu();
+	    }
     }
 
     private void PlayAudio(string name)

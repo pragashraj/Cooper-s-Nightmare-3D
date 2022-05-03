@@ -18,16 +18,21 @@ public class Objective6 : MonoBehaviour
     [SerializeField] private GameObject playerIndicator;
     [SerializeField] private GameObject carIndicator;
     [SerializeField] private GameObject carMapCamera;
+    [SerializeField] private GameObject flora;
 
     private ObjectiveManager objectiveManager;
     private AudioManager audioManager;
     private ThirdPersonCharacterControl thirdPersonCharacterControl;
+    private CharacterAI characterAI;
+    private NavMeshAgent navMeshAgent;
 
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
         objectiveManager = FindObjectOfType<ObjectiveManager>();
         thirdPersonCharacterControl = player.GetComponent<ThirdPersonCharacterControl>();
+        characterAI = flora.GetComponent<CharacterAI>();
+        navMeshAgent = flora.GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -49,6 +54,7 @@ public class Objective6 : MonoBehaviour
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
                 thirdPersonCharacterControl.IsStoryMode = true;
+                SetFloraDestination();
                 StartCoroutine(HandleObjectveFlow());
             }
         }
@@ -96,5 +102,16 @@ public class Objective6 : MonoBehaviour
 
         enemyAI.MoveTo(roamPosition);
         enemyRobot.GetComponent<NavMeshAgent>().speed = 3f;
+    }
+
+    private void SetFloraDestination()
+    {
+        navMeshAgent.enabled = true;
+        characterAI.enabled = true;
+
+        characterAI.MoveTo(roamPosition);
+        navMeshAgent.speed = 4f;
+
+        flora.GetComponent<Animator>().SetFloat("Movement", 1f, 0.1f, Time.deltaTime);
     }
 }

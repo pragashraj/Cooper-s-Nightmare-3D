@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Objective8 : MonoBehaviour
 {
@@ -15,14 +16,18 @@ public class Objective8 : MonoBehaviour
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject map;
     [SerializeField] private GameObject nightmare;
+    [SerializeField] private GameObject storyTextPanel;
+    [SerializeField] private Text storyText;
 
     private ObjectiveManager objectiveManager;
     private AudioManager audioManager;
+    private GameManager gameManager;
 
     private void Awake()
     {
         objectiveManager = FindObjectOfType<ObjectiveManager>();
         audioManager = FindObjectOfType<AudioManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,14 +87,23 @@ public class Objective8 : MonoBehaviour
         fadeOutPanel.GetComponent<Animation>().Play();
 
         yield return new WaitForSeconds(2f);
-	    cutCams[1].SetActive(false);
+        storyTextPanel.SetActive(true);
+        cutCams[1].SetActive(false);
         cutCams[2].SetActive(true);
         nightmare.SetActive(true);
         playerY.GetComponentInChildren<Animator>().SetTrigger("FallenIdle");
         playerY.transform.position = new Vector3(playerY.transform.position.x, 1, playerY.transform.position.z);
 
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(2f);
+        storyText.text = "Nighmare: You can't escape from me cooper";
+
+        yield return new WaitForSeconds(6f);
+        gameManager.isLevelEnd = true;
+        storyText.text = "";
+        storyTextPanel.SetActive(false);
         levelEnd.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
     }
 
     private void PlayAudio(string name)

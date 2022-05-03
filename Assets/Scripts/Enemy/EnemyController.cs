@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 roamPosition;
     private Vector3 targetPosition;
     private State state;
+    private float range = 100f;
 
     private EnemyAI enemyAI;
     private Animator animator;
@@ -84,15 +85,16 @@ public class EnemyController : MonoBehaviour
 
     private void HandleAttack()
     {
+        RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, range)) 
-	{
-	     Transform target = hit.transform;
-	     if (target.tag == "Player")
-	     {
-		  PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
-		  playerHealth.DecreaseHealthValue(5);
-	     }
-	}
+	    {
+	         Transform target = hit.transform;
+	         if (target.tag == "Player")
+	         {
+		        PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
+		        playerHealth.DecreaseHealthValue(5);
+	         }
+	    }
     }
 
     private void FindTarget()

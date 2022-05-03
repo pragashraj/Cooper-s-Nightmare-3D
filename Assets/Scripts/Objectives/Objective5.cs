@@ -118,6 +118,7 @@ public class Objective5 : MonoBehaviour
 
         thirdPersonCharacterControl.IsStoryMode = false;
         fadeOutPanel.SetActive(false);
+        storyText.text = "";
         storyTextPanel.SetActive(false);
         cutSceneCamera.SetActive(false);
         CompleteObject5();

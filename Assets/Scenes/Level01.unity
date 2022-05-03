@@ -9846,6 +9846,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1600968371}
     - target: {fileID: 1509337346429032022, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: storyText
+      value: 
+      objectReference: {fileID: 1446255129}
+    - target: {fileID: 1509337346429032022, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: alienCompund
       value: 
       objectReference: {fileID: 894975292}
@@ -9853,6 +9857,10 @@ PrefabInstance:
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 1008107520}
+    - target: {fileID: 1509337346429032022, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: storyTextPanel
+      value: 
+      objectReference: {fileID: 394795043}
     - target: {fileID: 1509337346429032022, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: cinematicAlien1
       value: 

@@ -19,7 +19,7 @@ public class DoorOpen : MonoBehaviour
     
     void Update()
     {
-        if (entered)
+        if (entered && !opened)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {

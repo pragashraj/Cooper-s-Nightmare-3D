@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseHealthValue(float count)
     {
-        if (count != 100)
+        if (count >= 100)
         {
             float healthTemp = health + count;
 
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealthValue(float count)
     {
-        if (count != 0)
+        if (count <= 0)
         {
             float healthTemp = health - count;
 

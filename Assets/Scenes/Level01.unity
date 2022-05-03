@@ -1118,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4838867917590668969, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
+      propertyPath: m_TagString
+      value: PlayerRoot
+      objectReference: {fileID: 0}
     - target: {fileID: 4838867917590668974, guid: e2da63957cb207f47b17388ca150baf3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1311,6 +1315,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &229937764
 Animator:
   serializedVersion: 3
@@ -1620,6 +1625,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &268660180
 Animator:
   serializedVersion: 3
@@ -2173,6 +2179,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!114 &444820237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2447,6 +2454,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &451603960
 Animator:
   serializedVersion: 3
@@ -3155,6 +3163,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!114 &530338788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,6 +3974,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 0}
+  HealthInterval: 5
 --- !u!195 &713006101
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4693,6 +4703,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!114 &864630832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4967,6 +4978,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &876525070
 Animator:
   serializedVersion: 3
@@ -5374,6 +5386,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &954557596
 Animator:
   serializedVersion: 3
@@ -6463,6 +6476,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!114 &1191367883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6946,6 +6960,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &1280479011
 Animator:
   serializedVersion: 3
@@ -7413,6 +7428,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!114 &1428681486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11317,6 +11333,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!195 &1900929705
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12254,6 +12271,7 @@ MonoBehaviour:
   walkingSpeed: 1
   runningSpeed: 2
   player: {fileID: 223941966}
+  HealthInterval: 5
 --- !u!95 &2007085269
 Animator:
   serializedVersion: 3

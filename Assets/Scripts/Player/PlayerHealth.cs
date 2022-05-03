@@ -7,15 +7,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float lerpSpeed;
 
     private ThirdPersonCharacterControl thirdPersonCharacterControl;
+    private PlayerAnimatorController animatorController;
 
     private float health = 100;
     private bool isDead;
 
     public float Health { get => health; set => health = value; }
 
-    private void Start()
+    private void Awake()
     {
         thirdPersonCharacterControl = gameObject.GetComponent<ThirdPersonCharacterControl>();
+        animatorController = gameObject.GetComponent<PlayerAnimatorController>();
     }
 
     void Update()
@@ -26,8 +28,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             isDead = true;
+            animatorController.DeathAnim();
             thirdPersonCharacterControl.enabled = false;
-            thirdPersonCharacterControl.HandleDead();
             Time.timeScale = 0;
             Cursor.visible = true;
         }
@@ -40,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseHealthValue(float count)
     {
-        if (count >= 100)
+        if (count <= 100)
         {
             float healthTemp = health + count;
 
@@ -57,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealthValue(float count)
     {
-        if (count <= 0)
+        if (count >= 0)
         {
             float healthTemp = health - count;
 

@@ -135,7 +135,7 @@ public class GameController : MonoBehaviour
         cutCameras[0].SetActive(false);
         fadeOutPanel.SetActive(false);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         fadeOutPanel.SetActive(true);
         fadeOutPanel.GetComponent<Animation>().Play();
 

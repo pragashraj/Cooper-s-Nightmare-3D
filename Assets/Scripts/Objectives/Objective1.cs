@@ -101,11 +101,11 @@ public class Objective1 : MonoBehaviour
         yield return new WaitForSeconds(2f);
         storyTextPanel.SetActive(true);
 
-        /*for (int i = 0; i < conversations.Count; i++)
+        for (int i = 0; i < conversations.Count; i++)
         {
             SetConversation(i);
             yield return new WaitForSeconds(3f);
-        }*/
+        }
 
         thirdPersonOrbitCamBasic.enabled = true;
         fadeOutPanel.SetActive(false);

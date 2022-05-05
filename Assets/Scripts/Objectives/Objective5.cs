@@ -65,7 +65,6 @@ public class Objective5 : MonoBehaviour
                 fadeOutPanel.SetActive(true);
                 fadeOutPanel.GetComponent<Animation>().Play();
                 flora.GetComponent<CharacterMovement>().enabled = false;
-                flora.GetComponent<NavMeshAgent>().enabled = false;
                 flora.GetComponent<CharacterAI>().enabled = false;
                 flora.SetActive(false);
                 thirdPersonCharacterControl.IsStoryMode = true;

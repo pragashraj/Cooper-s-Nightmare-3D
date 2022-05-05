@@ -475,21 +475,21 @@ Transform:
   m_Children:
   - {fileID: 993107849}
   - {fileID: 713006097}
-  - {fileID: 333677611}
-  - {fileID: 196059699}
   - {fileID: 530338784}
-  - {fileID: 1625671383}
-  - {fileID: 1656486605}
-  - {fileID: 444820233}
-  - {fileID: 29632126}
-  - {fileID: 1900929701}
-  - {fileID: 1661041338}
-  - {fileID: 1077907233}
-  - {fileID: 408519358}
-  - {fileID: 573937663}
-  - {fileID: 751532338}
   - {fileID: 528709939}
+  - {fileID: 573937663}
+  - {fileID: 1077907233}
+  - {fileID: 444820233}
+  - {fileID: 751532338}
+  - {fileID: 1900929701}
+  - {fileID: 1625671383}
+  - {fileID: 1661041338}
+  - {fileID: 1656486605}
+  - {fileID: 408519358}
   - {fileID: 1817238932}
+  - {fileID: 29632126}
+  - {fileID: 196059699}
+  - {fileID: 333677611}
   - {fileID: 498706131}
   - {fileID: 375342320}
   m_Father: {fileID: 0}
@@ -13035,7 +13035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1509337345421964210, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 89.265
+      value: 90.88
       objectReference: {fileID: 0}
     - target: {fileID: 1509337345421964210, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13043,7 +13043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1509337345421964210, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 291.386
+      value: 291.62
       objectReference: {fileID: 0}
     - target: {fileID: 1509337345421964211, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: m_IsActive
@@ -13189,6 +13189,18 @@ PrefabInstance:
       propertyPath: cutCam5
       value: 
       objectReference: {fileID: 744531692}
+    - target: {fileID: 1509337345511844517, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: newPos.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509337345511844517, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: newPos.y
+      value: 341
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509337345511844517, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
+      propertyPath: newPos.z
+      value: -217
+      objectReference: {fileID: 0}
     - target: {fileID: 1509337345511844517, guid: 3cfac35759f963c4d803381b04f3d367, type: 3}
       propertyPath: aliensRoot
       value: 
@@ -14178,62 +14190,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100036, guid: d2f59d90a1ec7d344914a1e03fa7185d, type: 3}
   m_PrefabInstance: {fileID: 1817238931}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1817238934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817238933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1304c9b23ebaf459705de18037bc6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1817238936}
-  offset: {x: -2, y: 0, z: -2}
-  walkingSpeed: 1
-  runningSpeed: 2
-  player: {fileID: 223941966}
-  muzzleEffects:
-  - {fileID: 520167790}
-  - {fileID: 1326893016}
---- !u!114 &1817238935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817238933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f672e31bcc4b0f43a7405f9e5697ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1817238936}
-  range: 50
---- !u!195 &1817238936
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817238933}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!95 &1817238937
 Animator:
   serializedVersion: 3

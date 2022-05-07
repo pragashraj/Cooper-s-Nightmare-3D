@@ -38,8 +38,8 @@ public class CharacterMovement : MonoBehaviour
     private void HandleWalk()
     {
         walking = true;
-        roamPosition = characterAI.GetRoamingPosition(startingPosition);
-        characterAI.MoveTo(roamPosition);
+	characterAI.MoveTo(roamPosition);
+        roamPosition = characterAI.GetRoamingPosition(roamPosition);
         characterFloraController.HandleWalkAnim();
     }
 }

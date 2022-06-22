@@ -15227,7 +15227,7 @@ MonoBehaviour:
   fadeOutPanel: {fileID: 1008107520}
   carCam: {fileID: 2065823943}
   player: {fileID: 792870534}
-  newPlayerPos: {x: 175, y: 1, z: 120}
+  newPlayerPos: {x: 190, y: 1, z: 90}
   newFloraPos: {x: 300, y: 1, z: 125}
   offset: {x: -1, y: 0, z: -2}
   car: {fileID: 696628955}

@@ -104,6 +104,7 @@ public class Objective8 : MonoBehaviour
         levelEnd.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void PlayAudio(string name)

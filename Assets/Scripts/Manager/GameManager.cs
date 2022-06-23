@@ -5,11 +5,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject gameEndMenu;
+    [SerializeField] private GameObject mainMap;
 
     private AudioManager audioManager;
 
     private bool introEnd = false;
     private bool isMainMenuOpen = false;
+    private bool isMainMapOpen = false;
     private bool levelEnd = false;
 
     public bool isIntroEnd { get => introEnd; set => introEnd = value; }
@@ -29,13 +31,38 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 	    if (introEnd && !levelEnd) {
-	         HandleMainMenu();
-	    }
+	        HandleMainMenu();
+            HandleMainmap();
+        }
     }
 
     private void PlayAudio(string name)
     {
         audioManager.Play(name);
+    }
+
+    private void HandleMainmap()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            isMainMapOpen = !isMainMapOpen;
+
+            if (isMainMapOpen)
+            {
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                PlayAudio("InventoryOpen");
+            }
+            else
+            {
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                PlayAudio("InventoryClose");
+            }
+
+            mainMap.SetActive(isMainMapOpen);
+        }
     }
 
     private void HandleMainMenu()

@@ -33,14 +33,14 @@ public class GameController : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         playerManager = FindObjectOfType<PlayerManager>();
-	gameManager = FindObjectOfType<GameManager>();
+	    gameManager = FindObjectOfType<GameManager>();
     }
 
     void Start()
     {
         introVideoPanel.SetActive(true);
         introVideoPlayer.loopPointReached += CheckOver;
-	Cursor.visible = true;
+	    Cursor.visible = true;
     }
 
     void Update()
@@ -49,14 +49,13 @@ public class GameController : MonoBehaviour
 	    {
 	        introVideoSkipHandled = true;
 	        StartCoroutine(stopIntroVideo(introVideoPlayer));
-	    }
+            HandleAlienWalk();
+        }
 
         if (isCut3Triggered)
         {
             HandleCut3Triggered();
         }
-
-        HandleAlienWalk();
     }
 
     private void HandleCut3Triggered()
@@ -105,7 +104,7 @@ public class GameController : MonoBehaviour
 
     private void ActivateAlienCompound()
     {
-	cutCameras[0].SetActive(true);
+	    cutCameras[0].SetActive(true);
         alienCompound.SetActive(true);
         fadeInPanel.SetActive(true);
         fadeInPanel.GetComponent<Animation>().Play();
@@ -116,11 +115,11 @@ public class GameController : MonoBehaviour
 
     IEnumerator stopIntroVideo(VideoPlayer vp)
     {
-	introVideoPanel.SetActive(false);
+	    introVideoPanel.SetActive(false);
         vp.Stop();
         ActivateAlienCompound();
         yield return new WaitForSeconds(2f);
-	fadeInPanel.SetActive(false);
+	    fadeInPanel.SetActive(false);
     }
 
     IEnumerator FadeOut()
@@ -130,7 +129,7 @@ public class GameController : MonoBehaviour
         fadeOutPanel.GetComponent<Animation>().Play();
 
         yield return new WaitForSeconds(3f);
-	alienWalkingSpeed *= 3;
+	    alienWalkingSpeed *= 3;
         cutCameras[1].SetActive(true);
         cutCameras[0].SetActive(false);
         fadeOutPanel.SetActive(false);
@@ -159,6 +158,6 @@ public class GameController : MonoBehaviour
         StopAudio("ThemeForAliens");
         playerX.SetActive(true);
         playerManager.StartPlayerX();
-	gameManager.isIntroEnd = true;
+	    gameManager.isIntroEnd = true;
     }
 }

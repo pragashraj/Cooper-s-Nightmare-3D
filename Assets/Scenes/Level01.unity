@@ -16048,9 +16048,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653248348353558016, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: mainMap
+      value: 
+      objectReference: {fileID: 2064329612}
+    - target: {fileID: 6653248348353558016, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 500370227}
+    - target: {fileID: 6653248348353558016, guid: d2166800871f9844c853403d0ab34a03, type: 3}
+      propertyPath: gameEndMenu
+      value: 
+      objectReference: {fileID: 1578703030}
     - target: {fileID: 6653248348923642188, guid: d2166800871f9844c853403d0ab34a03, type: 3}
       propertyPath: storyText
       value: 

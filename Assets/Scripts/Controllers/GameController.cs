@@ -49,12 +49,16 @@ public class GameController : MonoBehaviour
 	    {
 	        introVideoSkipHandled = true;
 	        StartCoroutine(stopIntroVideo(introVideoPlayer));
-            HandleAlienWalk();
         }
 
         if (isCut3Triggered)
         {
             HandleCut3Triggered();
+        }
+
+        if (introVideoSkipped)
+        {
+            HandleAlienWalk();
         }
     }
 
@@ -89,7 +93,7 @@ public class GameController : MonoBehaviour
     private void HandleAlienWalk()
     {
         Vector3 alienMovement = new Vector3(0f, 0f, forwardZ) * alienWalkingSpeed * Time.deltaTime;
-        cinematicAlien1.transform.Translate(alienMovement, Space.Self);
+        cinematicAlien1.transform.Translate(alienMovement);
     }
 
     private void PlayAudio(string name)

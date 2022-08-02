@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -30,11 +31,9 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             isDead = true;
-            animatorController.DeathAnim();
+            gameObject.GetComponent<Animator>().SetTrigger("Death");
             thirdPersonCharacterControl.enabled = false;
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            gameManager.HandleGameEndMenuActive(true);
+            StartCoroutine(SetGameOver());
         }
     }
 
@@ -75,5 +74,13 @@ public class PlayerHealth : MonoBehaviour
                 health = healthTemp;
             }
         }
+    }
+
+    IEnumerator SetGameOver()
+    {
+        yield return new WaitForSeconds(4f);
+        gameManager.HandleGameEndMenuActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
     }
 }

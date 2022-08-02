@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     private bool cutTriggeredEntered = false;
     private bool introVideoSkipped = false;
     private bool introVideoSkipHandled = false;
+    private bool isIntroVideoFinished = false;
 
     public bool isCut3Triggered { get => cutTriggeredEntered; set => cutTriggeredEntered = value; }
 
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
             HandleCut3Triggered();
         }
 
-        if (introVideoSkipped)
+        if (introVideoSkipped || isIntroVideoFinished)
         {
             HandleAlienWalk();
         }
@@ -124,6 +125,7 @@ public class GameController : MonoBehaviour
         ActivateAlienCompound();
         yield return new WaitForSeconds(2f);
 	    fadeInPanel.SetActive(false);
+        isIntroVideoFinished = true;
     }
 
     IEnumerator FadeOut()

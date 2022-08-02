@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     private ThirdPersonCharacterControl thirdPersonCharacterControl;
     private PlayerAnimatorController animatorController;
+    private GameManager gameManager;
 
     private float health = 100;
     private bool isDead;
@@ -18,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         thirdPersonCharacterControl = gameObject.GetComponent<ThirdPersonCharacterControl>();
         animatorController = gameObject.GetComponent<PlayerAnimatorController>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
             thirdPersonCharacterControl.enabled = false;
             Time.timeScale = 0;
             Cursor.visible = true;
+            gameManager.HandleGameEndMenuActive(true);
         }
     }
 

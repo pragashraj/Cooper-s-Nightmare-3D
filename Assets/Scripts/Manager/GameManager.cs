@@ -120,4 +120,15 @@ public class GameManager : MonoBehaviour
         PlayAudio("Click");
         SceneManager.LoadScene(0);
     }
+
+    public void HandleRestartCurrentlevel()
+    {
+        PlayAudio("Click");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -11,13 +11,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float runningSpeed = 2f;
     [SerializeField] private GameObject player;
     [SerializeField] private MuzzleEffect[] muzzleEffects;
+    [SerializeField] private float HealthInterval = 5.0f;
+    [SerializeField] private float healthDecresingValue = 10.0f;
 
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     private Vector3 targetPosition;
     private State state;
     private float range = 100f;
-    private float HealthInterval = 5.0f;
     private float healthIntervalAccumulator;
 
     private EnemyAI enemyAI;
@@ -105,7 +106,7 @@ public class EnemyController : MonoBehaviour
                 if ((healthIntervalAccumulator += Time.deltaTime) >= HealthInterval)
                 {
                     healthIntervalAccumulator = 0.0f;
-                    playerHealth.DecreaseHealthValue(5);
+                    playerHealth.DecreaseHealthValue(healthDecresingValue);
                 }
             }
         }
